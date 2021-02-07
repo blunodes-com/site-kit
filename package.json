@@ -2,33 +2,25 @@
   "name": "@blunodes-com/site-kit",
   "version": "1.0.0",
   "description": "Styles and components for use in *.blunodes.com websites",
-  "module": "index.mjs",
+  "main": "index.mjs",
+  "directories": {
+    "test": "test"
+  },
   "scripts": {
-    "testunit": "mocha -r esm test/unit/**"
+    "test": "testunit"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/blunodes-com/site-kit.git"
   },
+  "keywords": [
+    "blunodes",
+    "site-kit"
+  ],
   "author": "Christian Rau @ blunodes.com",
   "license": "GPL-3.0-or-later",
   "bugs": {
     "url": "https://github.com/blunodes-com/site-kit/issues"
   },
-  "homepage": "https://github.com/blunodes-com/site-kit#readme",
-  "devDependencies": {
-    "esm": "^3.2.25",
-    "mocha": "^6.2.0",
-    "svelte": "^3.9.2"
-  },
-  "dependencies": {
-    "@sindresorhus/slugify": "^0.9.1",
-    "golden-fleece": "^1.0.9"
-  },
-  "files": [
-    "index.mjs",
-    "base.css",
-    "components",
-    "utils"
-  ]
+  "homepage": "https://github.com/blunodes-com/site-kit#readme"
 }
