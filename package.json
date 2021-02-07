@@ -1,5 +1,5 @@
 {
-  "name": "@blunodes-com/site-kit",
+  "name": "@blunodes.com/site-kit",
   "version": "1.0.0",
   "description": "Styles and components for use in *.blunodes.com websites",
   "main": "index.mjs",
@@ -7,7 +7,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "testunit"
+    "testunit": "mocha -r esm test/unit/**"
   },
   "repository": {
     "type": "git",
