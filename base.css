@@ -34,8 +34,10 @@
 	--back:       	#ffffff;
 	--back-light: 	#f6fafd;
 	--back-api: 		#eff8ff;
-	--prime:      	#ff3e00;
+	--prime:      	#311597;
+	--p-light:      #5861d8;
 	--second:     	#676778;
+	--border:     	#9898e6;
 	--flash:      	#40b3ff;
 	--heading:	var(--second);
 	--text:      		#444;
@@ -59,6 +61,7 @@
 
 body {
 	--font: 'Overpass', sans-serif;
+	--font-second: 'Inter', sans-serif;
 	--font-mono: 'Fira Mono', monospace;
 }
 
@@ -84,6 +87,27 @@ body {
 		local('Overpass Bold '),
 		local('Overpass-Bold'),
 		url('/fonts/overpass/overpass-latin-600.woff2') format('woff2');
+}
+
+/* overpass-600normal - latin */
+@font-face {
+	font-family: 'Overpass';
+	font-style: bold;
+	font-weight: 700;
+	src:
+		local('Overpass Bolder '),
+		local('Overpass-Bolder'),
+		url('/fonts/overpass/overpass-latin-700.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 300;
+	src:
+		local('Inter '),
+		local('Inter'),
+		url('/fonts/overpass/Inter-VariableFont_slnt,wght.ttf') format('ttf');
 }
 
 /* fira-mono-400normal - latin */
