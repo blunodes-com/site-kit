@@ -34,37 +34,72 @@
 	--back:       	#ffffff;
 	--back-light: 	#f6fafd;
 	--back-api: 		#eff8ff;
-	--prime:      	#311597;
+	--prime:      	#0a2540;
 	--p-light:      #5861d8;
-	--second:     	#676778;
-	--border:     	#9898e6;
+	--second:     	var(--prime);
+	--third:     		#4a4a4a;
+	--love-red:     #ff0066;
+	--border:     	#7a73ff;
 	--flash:      	#40b3ff;
-	--heading:	var(--second);
-	--text:      		#444;
+	--accent-color:	#635bff;
+	--heading:	var(--prime);
+	--text:      		#4a4a4a;
 	--sidebar-text: rgba(255, 255, 255, .75);
-	--border-w:  		.3rem; /* border-width  */
-	--border-r:  		.4rem; /* border-radius */
+	--border-w:  			.3rem; /* border-width  */
+	--border-r:  			.4rem; /* border-radius */
+	/* Btn styling */
+	/* Primary */
+	--btn-bg-pri: var(--prime);
+	--btn-txt-pri: var(--back);
+	--btn-hovr-pri: var(--flash);
+	/* Secondary */
+	--btn-bg-sec: var(--accent-color);
+	--btn-txt-sec: var(--back);
+	--btn-hovr-sec: var(--prime);
+	--border-button:	1.5rem;
+	/* border-radius */
+		/* styling */
+	--inlineCodeBackground: #dce6ee;
+	--blendBackground: #80e9ff;
+	--blendIntersection: #0048e5;
+	--blendForeground: #7a73ff;
+	--gradientColorZero: #a960ee;
+	--gradientColorOne: #ff333d;
+	--gradientColorTwo: #90e0ff;
+	--gradientColorThree: #ffcb57;
+	--gradientColorZeroTransparent: rgba(169,96,238,0);
+	--gradientColorOneTransparent: rgba(255,51,61,0);
+	--gradientColorTwoTransparent: rgba(144,224,255,0);
+	--gradientColorThreeTransparent: rgba(255,203,87,0);
+	--shadeOneColor: #02bcf5;
+	--shadeTwoColor: #0073e6;
+	--shadeThreeColor: #003ab9;
+	--shadeFourColor: #635bff;
+	--shadeFiveColor: #002c59;
+	--shadeSixColor: #09cbcb;
+	--hoverTransition: 150ms cubic-bezier(0.215,0.61,0.355,1);
+	--focusBoxShadow: 0 0 0 2px #4d90fe,inset 0 0 0 2px hsla(0,0%,100%,0.9);
 }
 
 /*	typo vars */
 .typo-default {
 	--code-fs: 1.3rem;
-	--h6:      1.4rem;
-	--h5:      1.6rem;
-	--h4:      1.8rem; /* default font-size */
-	--h3:      2.6rem;
-	--h2:        3rem;
-	--h1:      3.2rem;
+	--h6:      1.6rem;
+	--h5:      1.8rem;
+	--h4:      	 2rem; /* default font-size */
+	--h3:      2.8rem;
+	--h2:      3.2rem;
+	--h1:      3.8rem;
+	--hero:    	10rem;
 	--linemax:   42em; /* max line-length */
 	--lh:  		 	  1.5; /* base line-height */
 }
 
 body {
 	--font: 'Overpass', sans-serif;
-	--font-second: 'Inter', sans-serif;
+	--font-inter: 'Inter', sans-serif;
 	--font-mono: 'Fira Mono', monospace;
 }
-
 
 /*	fonts ---------------------------------- */
 /* overpass-300normal - latin */
@@ -76,6 +111,17 @@ body {
 		local('Overpass Light '),
 		local('Overpass-Light'),
 		url('/fonts/overpass/overpass-latin-300.woff2') format('woff2');
+}
+
+/* overpass-300normal - latin */
+@font-face {
+	font-family: 'Overpass';
+	font-style: normal;
+	font-weight: 400;
+	src:
+		local('Overpass Light '),
+		local('Overpass-Light'),
+		url('/fonts/overpass/overpass-latin-400.woff2') format('woff2');
 }
 
 /* overpass-600normal - latin */
@@ -101,13 +147,13 @@ body {
 }
 
 @font-face {
-	font-family: 'Inter';
-	font-style: normal;
-	font-weight: 300;
-	src:
-		local('Inter '),
-		local('Inter'),
-		url('/fonts/overpass/Inter-VariableFont_slnt,wght.ttf') format('ttf');
+  font-family: 'Inter var';
+  font-weight: 100 900;
+  font-display: swap;
+  font-style: normal;
+  font-named-instance: 'Regular';
+	local('Inter '),
+  src: url("Inter-roman.var.woff2?v=3.15") format("woff2");
 }
 
 /* fira-mono-400normal - latin */
@@ -163,9 +209,6 @@ body {
 	font: 300 var(--h4)/var(--lh) var(--font);
 	background-color: var(--back);
 	color: var(--text);
-
-	/* default spacing of Overpass is a bit too airy */
-	/* letter-spacing: -.013em; */
 }
 
 h1, h2, h3, h4, h5, h6, blockquote {
@@ -182,12 +225,41 @@ h3 { font-size: var(--h3) }
 h2 { font-size: var(--h2) }
 h1 { font-size: var(--h1) }
 
-h1, h2 {
-	font-family: var(--font);
+h1, h2, h3, h5 {
+	font-family: var(--font-inter);
+}
+
+h1 {
+	font-weight: 600;
+	letter-spacing: -.05em;
 	line-height: 1.25;
 }
 
-h3 { font-weight: 300 }
+h2 {
+	font-weight: 600;
+	letter-spacing: -.025em;
+	line-height: 1.15;
+}
+
+h3 { 
+	font-weight: 400;
+	/* default spacing of Overpass is a bit too airy */
+	letter-spacing: -.013em;
+}
+
+h5 {
+	font-weight: 550;
+	letter-spacing: -.023em;
+}
+
+h4, h6, blockquote {
+	font-weight: 500;
+}
+
+h6 {
+	font-family: Overpass, Helvetica, sans-serif;
+	font-weight: 500;
+}
 
 p, ol, ul {
 	margin: 0 0 1em 0;
@@ -226,7 +298,7 @@ pre code {
 /*	opinionated styles --------------------- */
 
 li:not(.white) > h2 {
-	color: var(--second)
+	color: var(--accent-color)
 }
 
 blockquote {
@@ -276,7 +348,7 @@ button > svg,
 .btn {
 	--btn-h: 4rem;
 	--btn-outline: .2rem;
-	--btn-font: var(--font);
+	--btn-font: var(--font-inter);
 	--btn-calc-h: calc(var(--btn-h) - var(--btn-outline) * 2);
 	--btn-hover: linear-gradient(to top, rgba(0,0,0,.07), rgba(0,0,0,.07));
 
@@ -320,9 +392,9 @@ button > svg,
 a {
 	position: relative;
 	padding: 0 0 1px 0;
-	border-bottom: 1px solid currentColor;
+	border-bottom: none;
 	user-select: none;
-	color: var(--prime);
+	color: var(--accent-color);
 	transition: color .2s, border .2s, padding .2s;
 }
 
@@ -332,12 +404,17 @@ a:hover  {
 
 a:hover {
 	padding: 0;
-	border-bottom: 2px solid currentColor;
+	border-bottom: none;
 }
 
 a.no-underline {
 	border-bottom: none;
 	padding: 0;
+}
+
+a.no-underline.textlink {
+	font-weight: 600;
+	color: var(--accent-color);
 }
 
 /* a:hover:not(.disabled) > .icon { stroke: var(--flash) } */
@@ -364,7 +441,7 @@ a.no-underline {
 	position: absolute;
 	margin-top: 1.1rem;
 	margin-left: -1.8rem;
-	background-color: var(--second);
+	background-color: var(--third);
 	width: .6rem;
 	height: .6rem;
 	border-radius: 2px;
@@ -443,7 +520,7 @@ table code, table span {
 
 /*	theme colors --------------------------- */
 .prime      { color: var(--prime) !important }
-.second     { color: var(--second) !important }
+.second     { color: var(--accent-color) !important }
 .flash      { color: var(--flash) !important }
 .black      { color: black !important }
 .white      { color: white !important }
@@ -451,7 +528,7 @@ table code, table span {
 .back       { background-color: var(--back) !important }
 .back-light { background-color: var(--back-light) !important }
 .bg-prime   { background-color: var(--prime) !important }
-.bg-second  { background-color: var(--second) !important }
+.bg-second  { background-color: var(--third) !important }
 .bg-flash   { background-color: var(--flash) !important }
 
 /*	inputs --------------------------------- */
@@ -480,7 +557,7 @@ input[type="checkbox"]::before {
 	border-radius: 1em;
 	top: 0;
 	left: 0;
-	background: var(--second);
+	background: var(--accent-color);
 	/* box-sizing: border-box; */
 	box-sizing: content-box;
 }
