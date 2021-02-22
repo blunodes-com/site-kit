@@ -84,10 +84,10 @@
 /*	typo vars */
 .typo-default {
 	--code-fs: 1.3rem;
-	--h6:      1.6rem;
+	--h6:      1.5rem;
 	--h5:      1.8rem;
 	--h4:      	 2rem; /* default font-size */
-	--h3:      2.8rem;
+	--h3:      2.6rem;
 	--h2:      3.2rem;
 	--h1:      3.8rem;
 	--hero:    	10rem;
@@ -149,10 +149,10 @@ body {
 @font-face {
   font-family: 'Inter var';
   font-weight: 100 900;
-  font-display: swap;
   font-style: normal;
   font-named-instance: 'Regular';
 	local('Inter '),
+	local('Inter'),
   src: url("Inter-roman.var.woff2?v=3.15") format("woff2");
 }
 
@@ -161,6 +161,7 @@ body {
 	font-family: 'Fira Mono';
 	font-style: normal;
 	font-weight: 400;
+	font-display: swap;
 	src:
 		local('Fira Mono Regular '),
 		local('Fira Mono-Regular'),
