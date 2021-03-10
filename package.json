@@ -15,7 +15,7 @@
   },
   "keywords": [
     "blunodes",
-    "site-kit"
+    "utils"
   ],
   "author": "Christian Rau @ blunodes.com",
   "license": "GPL-3.0-or-later",
@@ -33,9 +33,6 @@
     "golden-fleece": "^1.0.9"
   },
   "files": [
-    "index.mjs",
-    "base.css",
-    "components",
     "utils"
   ]
 }
