@@ -1,6 +1,6 @@
 {
   "name": "@blunodes.com/site-kit",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Styles and components for use in *.blunodes.com websites",
   "main": "index.mjs",
   "directories": {
